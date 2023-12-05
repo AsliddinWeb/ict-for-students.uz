@@ -14,8 +14,8 @@ SECRET_KEY = 'django-insecure-x=ha&6zv-%&z93l^7=#!evow&4i3cttx)9cvre_&=mduo_n-s6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ict-for-students.uz', 'www.ict-for-students.uz', '167.71.49.146', 'localhost']
 
 # Application definition
 
@@ -71,10 +71,20 @@ WSGI_APPLICATION = 'ICT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ict_db',
+        'USER': 'ict_user',
+        'PASSWORD': 'Bo^725726lyKGerYJ',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -111,8 +121,8 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
-# STATIC_ROOT = 'static/'
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 MEDIA_URL = '/media/'
